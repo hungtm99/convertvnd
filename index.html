@@ -57,8 +57,8 @@
     $( "#chuyendoi" ).click(function() {
         var number = $( "#number" ).val().trim();
         var text = to_vietnamese(number) + " đồng";
-        text = text.replace("  ", " ");
         text = capitalizeFirstLetter(text);
+        text = text.replace(/ +(?= )/g,'');
         $( "#tienchu" ).val(text);
     });
 
